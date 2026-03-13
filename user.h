@@ -37,6 +37,5 @@ void* memset(void*, int, uint);
 void* malloc(uint);
 void free(void*);
 int atoi(const char*);
-void init_lock(struct spinlock*);
 void lock(struct spinlock*);
 void unlock(struct spinlock*);
