@@ -44,5 +44,3 @@ void unlock(struct spinlock *);
 int cv_wait(struct condvar *);
 int cv_signal(struct condvar *);
 void init_lock(struct spinlock *);
-void lock(struct spinlock *);
-void unlock(struct spinlock *);
