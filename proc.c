@@ -544,8 +544,9 @@ sleep1(void *chan, struct spinlock *lk)
     acquire(&ptable.lock);
     lk->locked = 0;
     p->chan = chan;
-    p->state = SLEEPING; sched();
-    p-> chan = 0
+    p->state = SLEEPING; 
+    sched();
+    p-> chan = 0;
     release(&ptable.lock);
     while(xchg(&lk->locked, 1) != 0);
 }
