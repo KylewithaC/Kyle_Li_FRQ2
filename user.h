@@ -1,4 +1,4 @@
-#include "spinlock.h"
+
 struct stat;
 struct rtcdate;
 struct condvar;
