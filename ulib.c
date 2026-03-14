@@ -105,18 +105,17 @@ memmove(void *vdst, const void *vsrc, int n)
     *dst++ = *src++;
   return vdst;
 }
-void init_lock(struct spinlock *lk)
+void init_lock(struct spinlock * lk)
 {
   lk->locked = 0;
 }
 
-void lock(struct spinlock *lk)
+void lock(struct spinlock * lk)
 {
-  while(xchg(&lk->locked, 1) != 0)
-    ;
+  while(xchg(&lk->locked, 1) != 0);
 }
 
-void unlock(struct spinlock *lk)
+void unlock(struct spinlock * lk)
 {
   xchg(&lk->locked, 0);
 }
